@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h1 Image to ASCII converter
+    h3 Powered by ImageMagick and JP2A
+    form(
+      onsubmit="getConversion(event)",
+      method="post",
+      enctype="multipart/form-data"
+    ).mb-1
+      .mb-3
+        label.form-label(for="exampleInputEmail1") Image
+        input#exampleInputEmail1.form-control(type="file" name="filetoupload")
+      .mb-3
+        label.form-label(for="exampleInputEmail2") Width
+        input#exampleInputEmail2.form-control(type="number" name="width" value="300")
+      button.btn.btn-primary.mb-3 Submit
+  #spinner.d-flex.justify-content-center.invisible
+    .spinner-border
+  pre#imgcontent Choose an image to display here
